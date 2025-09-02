@@ -50,6 +50,11 @@ var GenAddr = map[string]string{
 
 var Voters = map[string]int{}
 
+type VoterEntry struct {
+	Name  string
+	Count int
+}
+
 func getProposal(id int) {
 	filename := fmt.Sprintf("data/proposal_%d", id)
 
@@ -89,14 +94,30 @@ func getProposals(maxID int) {
 	}
 }
 
+// Not ideal implementation, but it's working
+func displayVoters(voterList []VoterEntry) {
+	for _, entry := range voterList {
+		// Find the address for this voter
+		var addr string
+		for genAddr, genName := range GenAddr {
+			if genName == entry.Name {
+				addr = genAddr
+				break
+			}
+		}
+
+		if addr != "" {
+			fmt.Printf("Voter: %-20s - %s Proposals voted: %d\n", addr, entry.Name, entry.Count)
+		} else {
+			fmt.Printf("Voter: %-20s - %s Proposals voted: %d\n", "no username", entry.Name, entry.Count)
+		}
+	}
+
+}
+
 func displayProposal() {
 	fmt.Println("\nVoting Statistics:")
 	fmt.Println("------------------")
-
-	type VoterEntry struct {
-		Name  string
-		Count int
-	}
 
 	var voterList []VoterEntry
 	for voter, nb := range Voters {
@@ -111,9 +132,7 @@ func displayProposal() {
 		return voterList[i].Name < voterList[j].Name
 	})
 
-	for _, entry := range voterList {
-		fmt.Printf("Voter: %-40s Proposals voted: %d\n", entry.Name, entry.Count)
-	}
+	displayVoters(voterList)
 
 	fmt.Println("\nMissing addresses (not in GenAddr map):")
 	fmt.Println("---------------------------------------")
