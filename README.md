@@ -1,0 +1,1 @@
+# gno-govdao-activity-parser
