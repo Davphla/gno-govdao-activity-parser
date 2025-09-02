@@ -156,6 +156,6 @@ func main() {
 	fmt.Println("Gno Governance Proposal Voters Analysis")
 	fmt.Println("======================================")
 
-	getProposals(6)
+	getProposals(7)
 	displayProposal()
 }
