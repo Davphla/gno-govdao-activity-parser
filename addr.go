@@ -107,9 +107,9 @@ func displayVoters(voterList []VoterEntry) {
 		}
 
 		if addr != "" {
-			fmt.Printf("Voter: %-20s - %s Proposals voted: %d\n", entry.Name, addr, entry.Count)
+			fmt.Printf("%-20s (%s) - Proposals voted: %d\n", entry.Name, addr, entry.Count)
 		} else {
-			fmt.Printf("Voter: %-20s - %s Proposals voted: %d\n", entry.Name, "no username", entry.Count)
+			fmt.Printf("%-20s (%s) - Proposals voted: %d\n", entry.Name, "no username", entry.Count)
 		}
 	}
 
@@ -139,7 +139,7 @@ func displayProposal() {
 	for voter := range Voters {
 		if strings.HasPrefix(voter, "g1") {
 			// This is an address that wasn't found in GenAddr
-			fmt.Printf("Missing address: %s\n", voter)
+			fmt.Printf("%s\n", voter)
 		}
 	}
 
@@ -147,7 +147,7 @@ func displayProposal() {
 	fmt.Println("---------------------------")
 	for addr, name := range GenAddr {
 		if Voters[name] == 0 && Voters[addr] == 0 {
-			fmt.Printf("Non-voter: %s (%s)\n", name, addr)
+			fmt.Printf("%s (%s)\n", name, addr)
 		}
 	}
 }
