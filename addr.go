@@ -107,9 +107,9 @@ func displayVoters(voterList []VoterEntry) {
 		}
 
 		if addr != "" {
-			fmt.Printf("Voter: %-20s - %s Proposals voted: %d\n", addr, entry.Name, entry.Count)
+			fmt.Printf("Voter: %-20s - %s Proposals voted: %d\n", entry.Name, addr, entry.Count)
 		} else {
-			fmt.Printf("Voter: %-20s - %s Proposals voted: %d\n", "no username", entry.Name, entry.Count)
+			fmt.Printf("Voter: %-20s - %s Proposals voted: %d\n", entry.Name, "no username", entry.Count)
 		}
 	}
 
