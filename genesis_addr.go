@@ -29,7 +29,7 @@ var GenAddrMaster = map[string]string{
 	// T2
 	"g1jazghxvvgz3egnr2fc8uf72z4g0l03596y9ls7": "kouteki070", // Nemanja
 	"g1dfr24yhk5ztwtqn2a36m8f6ud8cx5hww4dkjfl": "Antonio",
-	"g12vx7dn3dqq89mz550zwunvg4qw6epq73d9csay": "onbloc", // Dongwon
+	"g12vx7dn3dqq89mz550zwunvg4qw6epq73d9csay": "onbloc", // assume it's Dongwon
 	"g1r04aw56fgvzy859fachr8hzzhqkulkaemltr76": "Blake",
 	"g17n4y745s08awwq4e0a38lagsgtntna0749tnxe": "Jinwoo",
 	"g1ckae7tc5sez8ul3ssne75sk4muwgttp6ks2ky9": "ByeongJun",
