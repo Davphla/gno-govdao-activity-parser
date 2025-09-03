@@ -3,4 +3,4 @@ ref https://github.com/gnolang/gno/issues/4703#issuecomment-3242750466
 
 Launch `fetch.sh` to get data.
 
-Then execute `go run addr.go` to display them.
+Then execute `go run .` to display them.
